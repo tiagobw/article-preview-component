@@ -1,7 +1,11 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        drawers: "url('/src/assets/images/drawers.jpg')",
+      },
+    },
     colors: {
       'very-dark-grayish-blue': 'hsl(217, 19%, 35%)',
       'desaturated-dark-blue': 'hsl(214, 17%, 51%)',
