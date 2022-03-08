@@ -3,6 +3,7 @@ module.exports = {
   theme: {
     extend: {},
     colors: {
+      white: '#fff',
       'very-dark-grayish-blue': 'hsl(217, 19%, 35%)',
       'desaturated-dark-blue': 'hsl(214, 17%, 51%)',
       'grayish-blue': 'hsl(212, 23%, 69%)',

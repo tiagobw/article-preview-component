@@ -1,9 +1,10 @@
+import cardImage from './assets/images/drawers.jpg';
 import avatarImage from './assets/images/avatar-michelle.jpg';
 
 import Card from './components/Card';
 
 const cardInformation = {
-  bgUrlImageTailwind: "bg-[url('/src/assets/images/drawers.jpg')]",
+  cardImage,
   header:
     'Shift the overall look and feel by adding these wonderful touches to furniture in your home',
   paragraph:
@@ -15,7 +16,7 @@ const cardInformation = {
 
 function App() {
   return (
-    <main className='flex justify-center items-center h-screen'>
+    <main className='flex justify-center items-center h-screen bg-light-grayish-blue'>
       <Card {...cardInformation} />
     </main>
   );
