@@ -1,4 +1,6 @@
-import iconShare from '../assets/images/icon-share.svg';
+import { useState } from 'react';
+import IconShare from './IconShare';
+import SpeechBubbleIcon from './SpeechBubbleIcon';
 
 type CardProps = {
   cardImage: string;
@@ -17,8 +19,14 @@ const Card = ({
   personName,
   date,
 }: CardProps) => {
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleClick = () => {
+    setIsClicked((prevState) => !prevState);
+  };
+
   return (
-    <article className='bg-white rounded-lg grid grid-cols-[328px] drop-shadow md:grid-cols-[325px_480px] md:h-[21rem]'>
+    <article className='relative bg-white rounded-lg grid grid-cols-[328px] drop-shadow md:grid-cols-[325px_480px] md:h-[21rem]'>
       <picture>
         <img
           className='object-cover w-full h-52 rounded-tl-lg rounded-tr-lg md:h-full md:rounded-tr-none md:rounded-bl-lg'
@@ -31,7 +39,9 @@ const Card = ({
           <h1 className='text-lg font-bold text-very-dark-grayish-blue'>
             {header}
           </h1>
-          <p className='text-desaturated-dark-blue mt-4 mb-10 md:mb-6'>{paragraph}</p>
+          <p className='text-desaturated-dark-blue mt-4 mb-10 md:mb-6'>
+            {paragraph}
+          </p>
         </header>
         <section className='grid grid-cols-[1fr_3fr_1fr] items-center mb-6'>
           <img
@@ -45,15 +55,19 @@ const Card = ({
             </h2>
             <p className='text-grayish-blue text-sm'>{date}</p>
           </header>
-          <picture className='justify-self-end bg-light-grayish-blue rounded-full p-2'>
-            <img
-              className='h-4 w-4'
-              src={iconShare}
-              alt='An arrow pointing to the right'
-            />
+          <picture
+            onClick={handleClick}
+            className={`justify-self-end ${
+              isClicked ? 'bg-very-dark-grayish-blue' : 'bg-light-grayish-blue'
+            } rounded-full p-[0.55rem] cursor-pointer`}
+          >
+            <IconShare color={`${isClicked ? '#fff' : '#6E8098'}`} />
           </picture>
         </section>
       </section>
+      {isClicked && (
+        <SpeechBubbleIcon className='translate-y-[-5.85rem] translate-x-[1.75rem] md:translate-y-[-6.75rem] md:translate-x-[3.7rem] absolute right-[0] bottom-[0]' />
+      )}
     </article>
   );
 };
