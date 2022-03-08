@@ -26,7 +26,7 @@ const Card = ({
   };
 
   return (
-    <article className='relative bg-white rounded-lg grid grid-cols-[328px] drop-shadow md:grid-cols-[325px_480px] md:h-[21rem]'>
+    <div className='relative bg-white rounded-lg grid grid-cols-[328px] drop-shadow md:grid-cols-[325px_480px] md:h-[21rem]'>
       <picture>
         <img
           className='object-cover w-full h-52 rounded-tl-lg rounded-tr-lg md:h-full md:rounded-tr-none md:rounded-bl-lg'
@@ -68,7 +68,7 @@ const Card = ({
       {isClicked && (
         <SpeechBubbleIcon className='translate-y-[-5.85rem] translate-x-[1.75rem] md:translate-y-[-6.75rem] md:translate-x-[3.7rem] absolute right-[0] bottom-[0]' />
       )}
-    </article>
+    </div>
   );
 };
 
