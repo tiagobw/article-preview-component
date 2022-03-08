@@ -1,10 +1,9 @@
-import cardImage from './assets/images/drawers.jpg';
 import avatarImage from './assets/images/avatar-michelle.jpg';
 
 import Card from './components/Card';
 
 const cardInformation = {
-  cardImage,
+  bgUrlImageTailwind: "bg-[url('/src/assets/images/drawers.jpg')]",
   header:
     'Shift the overall look and feel by adding these wonderful touches to furniture in your home',
   paragraph:

@@ -1,7 +1,7 @@
 import iconShare from '../assets/images/icon-share.svg';
 
 type CardProps = {
-  cardImage: string;
+  bgUrlImageTailwind: string;
   header: string;
   paragraph: string;
   avatarImage: string;
@@ -10,7 +10,7 @@ type CardProps = {
 };
 
 const Card = ({
-  cardImage,
+  bgUrlImageTailwind,
   header,
   paragraph,
   avatarImage,
@@ -19,7 +19,7 @@ const Card = ({
 }: CardProps) => {
   return (
     <article className='w-80'>
-      <div className='bg-drawers bg-cover h-52' />
+      <div className={`${bgUrlImageTailwind} bg-cover h-52`} />
       <div>
         <h1>{header}</h1>
         <p>{paragraph}</p>
