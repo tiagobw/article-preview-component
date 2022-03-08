@@ -55,14 +55,14 @@ const Card = ({
             </h2>
             <p className='text-grayish-blue text-sm'>{date}</p>
           </header>
-          <picture
+          <div
             onClick={handleClick}
             className={`justify-self-end ${
               isClicked ? 'bg-very-dark-grayish-blue' : 'bg-light-grayish-blue'
             } rounded-full p-[0.55rem] cursor-pointer`}
           >
             <IconShare color={`${isClicked ? '#fff' : '#6E8098'}`} />
-          </picture>
+          </div>
         </section>
       </section>
       {isClicked && (
