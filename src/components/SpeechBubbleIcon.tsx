@@ -12,15 +12,21 @@ const SpeechBubbleIcon = ({ className }: SpeechBubbleIconProps) => {
       className={`${className} z-[10] flex flex-col justify-center items-center`}
     >
       <div className='h-[55px] w-[165px] md:w-[250px] rounded-2xl bg-very-dark-grayish-blue flex justify-center items-center text-white'>
-        <p className='hidden md:block text-sm text-grayish-blue tracking-[0.3rem]'>SHARE</p>
-        <a href='#'>
+        <p className='hidden md:block text-sm text-grayish-blue tracking-[0.3rem]'>
+          SHARE
+        </p>
+        <a href='https://facebook.com' target='_blank' rel='noreferrer'>
           <img className='ml-4' src={iconFacebook} alt='Facebook icon' />
         </a>
-        <a href='#'>
+        <a href='https://twitter.com' target='_blank' rel='noreferrer'>
           <img className='ml-4' src={iconTwitter} alt='Twitter icon' />
         </a>
-        <a href='#'>
-          <img className='ml-4 mr-4 md:mr-0' src={iconPinterest} alt='Pinterest icon' />
+        <a href='https://pinterest.com' target='_blank' rel='noreferrer'>
+          <img
+            className='ml-4 mr-4 md:mr-0'
+            src={iconPinterest}
+            alt='Pinterest icon'
+          />
         </a>
       </div>
       <div className='z-[-1] w-8 h-8 bg-very-dark-grayish-blue rotate-45 translate-y-2 mt-[-2rem]' />
