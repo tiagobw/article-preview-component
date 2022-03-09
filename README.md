@@ -10,9 +10,10 @@ This is a solution to the [Article preview component challenge on Frontend Mento
     - [The challenge](#the-challenge)
     - [Screenshot](#screenshot)
     - [Links](#links)
-  - [My process](#my-process)
-    - [Built with](#built-with)
-    - [Project Highlight](#project-highlight)
+  - [Built with](#built-with)
+  - [Project Highlight](#project-highlight)
+  - [Running the project](#running-the-project)
+  - [Deploying the project](#deploying-the-project)
   - [Author](#author)
 
 ## Overview
@@ -31,23 +32,40 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/tiagobw/article-preview-component](https://github.com/tiagobw/article-preview-component)
-- Live Site URL: [[Add live site URL here](https://article-preview-component-frontendmentor-challenge.netlify.app/)](https://article-preview-component-frontendmentor-challenge.netlify.app/)
+- Live Site URL: [https://article-preview-component-frontendmentor-challenge.netlify.app/](https://article-preview-component-frontendmentor-challenge.netlify.app/)
 
-## My process
+## Built with
 
-### Built with
-
-- TypeScript
 - React
-- Flexbox
-- CSS Grid
-- Tailwind CSS
+- TypeScript
 - Semantic HTML5 markup
 - Mobile-first workflow
+- CSS Grid and Flexbox
+- Tailwind CSS
 
-### Project Highlight
+## Project Highlight
 
 I used a combination of React ref + useEffect + "mousedown" event listener to detect clicks outside the Social Media share links Popup.
+
+So whenever you open the popup by clicking the share icon, you can click outside to close it.
+
+## Running the project
+
+`npm start` or `yarn start`
+
+Runs the app in development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## Deploying the project
+
+`npm run build` or `yarn build`
+
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.<br>
+
+The app is ready to be deployed.
 
 ## Author
 
