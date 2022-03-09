@@ -1,5 +1,6 @@
-import { useState } from 'react';
-import IconShare from './IconShare';
+import { useRef, useState } from 'react';
+import { useGetOutsideClick } from '../hooks/useGetOutsideClick';
+import ShareButton from './ShareButton';
 import SpeechBubbleIcon from './SpeechBubbleIcon';
 
 type CardProps = {
@@ -20,10 +21,13 @@ const Card = ({
   date,
 }: CardProps) => {
   const [isClicked, setIsClicked] = useState(false);
+  const ref = useRef(null);
 
   const handleClick = () => {
     setIsClicked((prevState) => !prevState);
   };
+
+  useGetOutsideClick(ref, handleClick, isClicked);
 
   return (
     <div className='relative bg-white rounded-lg grid grid-cols-[328px] drop-shadow md:grid-cols-[325px_480px] md:h-[21rem]'>
@@ -55,19 +59,14 @@ const Card = ({
             </h2>
             <p className='text-grayish-blue text-sm'>{date}</p>
           </header>
-          <div
-            onClick={handleClick}
-            className={`justify-self-end ${
-              isClicked ? 'bg-very-dark-grayish-blue' : 'bg-light-grayish-blue'
-            } rounded-full p-[0.55rem] cursor-pointer`}
-          >
-            <IconShare color={`${isClicked ? '#fff' : '#6E8098'}`} />
+          <div ref={ref} className='justify-self-end'>
+            {isClicked && (
+              <SpeechBubbleIcon className='translate-y-[-5.85rem] translate-x-[1.75rem] md:translate-y-[-6.75rem] md:translate-x-[3.7rem] absolute right-[0] bottom-[0]' />
+            )}
+            <ShareButton handleClick={handleClick} isClicked={isClicked} />
           </div>
         </section>
       </section>
-      {isClicked && (
-        <SpeechBubbleIcon className='translate-y-[-5.85rem] translate-x-[1.75rem] md:translate-y-[-6.75rem] md:translate-x-[3.7rem] absolute right-[0] bottom-[0]' />
-      )}
     </div>
   );
 };
